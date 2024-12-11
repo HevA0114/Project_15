@@ -4,96 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Happy 15th Monthsary</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: 'Georgia', serif;
-            background: linear-gradient(to bottom, #800000, #4d0000);
-            color: white;
-            overflow: hidden;
-        }
-        .container {
-            background: rgba(0, 0, 0, 0.7);
-            padding: 20px;
-            border-radius: 15px;
-            width: 90%;
-            max-width: 600px;
-            margin: auto;
-            margin-top: 50px;
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
-            text-align: center;
-            position: relative;
-            z-index: 2;
-        }
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-        }
-        p {
-            font-size: 1.2rem;
-            margin: 15px 0;
-        }
-        .footer {
-            margin-top: 30px;
-            font-size: 0.9rem;
-            color: #ffcccc;
-        }
-        .btn {
-            display: inline-block;
-            margin-top: 20px;
-            padding: 10px 20px;
-            background-color: #b30000;
-            color: white;
-            text-decoration: none;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: background-color 0.3s;
-            cursor: pointer;
-        }
-        .btn:hover {
-            background-color: #990000;
-        }
-        /* Animated hearts */
-        .heart {
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: #ff4d4d;
-            transform: rotate(45deg);
-            animation: float 4s infinite ease-in-out;
-        }
-        .heart:before,
-        .heart:after {
-            content: '';
-            position: absolute;
-            width: 20px;
-            height: 20px;
-            background-color: #ff4d4d;
-            border-radius: 50%;
-        }
-        .heart:before {
-            top: -10px;
-            left: 0;
-        }
-        .heart:after {
-            top: 0;
-            left: -10px;
-        }
-        @keyframes float {
-            0% {
-                transform: translateY(0) rotate(45deg);
-                opacity: 1;
-            }
-            50% {
-                opacity: 0.7;
-            }
-            100% {
-                transform: translateY(-800px) rotate(45deg);
-                opacity: 0;
-            }
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div class="container">
@@ -106,27 +17,11 @@
             <!-- Place your invitation message here -->
             I wish I could take you out today, but for now, let me invite you to a special date soon. You deserve nothing but the best!
         </p>
-        <button class="btn" onclick="showSurprise()">Click Here for a Surprise!</button>
+        <button class="btn" id="surprise-btn">Click Here for a Surprise!</button>
         <div class="footer">With all my love, [Your Name]</div>
     </div>
 
-    <!-- Animated hearts -->
-    <script>
-        function createHeart() {
-            const heart = document.createElement('div');
-            heart.classList.add('heart');
-            heart.style.left = Math.random() * 100 + 'vw';
-            heart.style.animationDuration = Math.random() * 2 + 3 + 's';
-            document.body.appendChild(heart);
-            setTimeout(() => {
-                heart.remove();
-            }, 5000);
-        }
-        setInterval(createHeart, 500);
-
-        function showSurprise() {
-            alert("Would you like to go to a coffee date after classes on Monday?");
-        }
-    </script>
+    <script src="script.js"></script>
 </body>
 </html>
+
